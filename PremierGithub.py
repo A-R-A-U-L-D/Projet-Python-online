@@ -1,6 +1,7 @@
 from turtle import *
 from math import *
-from random import randrange
+
+speed(3)
 def carre(taille,couleur,angle):
      color(couleur)
      c=0
@@ -30,15 +31,13 @@ def etoile5(taille,couleur,angle):
           forward(taille)
           right(144)
           e+=1
-def etoile6(taille=100,couleur="red",angle=0):
-     speed(3) 
+def etoile6(taille,couleur,angle):
      color(couleur)
      triangle(taille,couleur)
      hauteur=(sqrt(3)*taille)/2
      up()
      goto(xcor(),ycor()+(2/3)*hauteur)
      down()
-     
      triangle(taille,couleur, sens=False)
 
 
