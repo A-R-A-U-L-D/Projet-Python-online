@@ -10,13 +10,16 @@ def carre(taille,couleur,angle):
           right(90)
           c+=1
 
-def triangle(taille,couleur,angle):
+def triangle(taille,couleur,sens: bool=True ):
      color(couleur)
-     t=0
-     setheading(angle)
+     t, k=0, 1
+     if sens:
+         k = 1
+     else:
+          k = -1
      while t<3:
           forward(taille)
-          left(120)
+          left(k*120)
           t+=1
 
 def etoile5(taille,couleur,angle):
@@ -27,15 +30,16 @@ def etoile5(taille,couleur,angle):
           forward(taille)
           right(144)
           e+=1
-def etoile6(taille,couleur,angle):
+def etoile6(taille=100,couleur="red",angle=0):
+     speed(3) 
      color(couleur)
-     triangle(taille,couleur,angle)
+     triangle(taille,couleur)
      hauteur=(sqrt(3)*taille)/2
      up()
-     setheading(angle+90)
      goto(xcor(),ycor()+(2/3)*hauteur)
      down()
-     triangle(taille,couleur,angle+180)
+     
+     triangle(taille,couleur, sens=False)
 
 
 
